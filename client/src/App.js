@@ -9,7 +9,7 @@ import Register from './pages/Register';
 const Container = styled.div``;
 
 function App() {
-  const user = null;
+  const user = 1;
 
   return (
     <Container>

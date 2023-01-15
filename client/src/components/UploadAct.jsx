@@ -93,14 +93,14 @@ const UploadAct = ({ setOpen }) => {
         <Label>Payer:</Label>
         <Select type="text" options={options}></Select>
         <Input type="number" placeholder="payment amount" />
-        <Label>All Member:</Label>
+        <Label>All Members:</Label>
         <Select
           type="text"
           options={options}
           isMulti
           onChange={handleMultiSelect}
         ></Select>
-        <Label>Comfirmed Selected Member: {members.toString()}</Label>
+        <Label>Comfirmed Selected Members: {members.toString()}</Label>
         <Button>Upload</Button>
       </Wrapper>
     </Container>
