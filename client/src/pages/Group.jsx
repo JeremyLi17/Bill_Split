@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   flex: 8;
-  padding: 22px 96px;
+  padding: 22px 44px;
   display: flex;
   flex-direction: column;
   text-align: center;

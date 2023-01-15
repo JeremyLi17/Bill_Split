@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   font-weight: 500;
   font-size: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px 10px;
   cursor: pointer;
 `;
 

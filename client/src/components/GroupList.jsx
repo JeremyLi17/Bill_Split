@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import GroupCard from './GroupCard';
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 
 const Container = styled.div`
   flex: 2;
@@ -22,6 +23,17 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
+`;
+
+const Button = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  justify-content: left;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
 `;
 
 const GroupList = () => {
@@ -58,6 +70,15 @@ const GroupList = () => {
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
           <GroupCard groupName={'Christmas Holiday'} />
+        </Link>
+        <Link
+          to={'/newgroup'}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <Button>
+            <AddCircleOutlinedIcon />
+            Create New Group
+          </Button>
         </Link>
       </Wrapper>
     </Container>

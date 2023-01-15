@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Group from './pages/Group';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import NewGroup from './pages/NewGroup';
 import Register from './pages/Register';
 
 const Container = styled.div``;
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/group" element={<Group />} />
+          <Route path="/newgroup" element={<NewGroup />} />
         </Routes>
       </BrowserRouter>
     </Container>

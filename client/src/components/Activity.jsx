@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 const Container = styled.div`
   margin-bottom: 10px;
@@ -71,6 +72,10 @@ const Activity = () => {
         <Button>
           <EditOutlinedIcon />
           Edit
+        </Button>
+        <Button>
+          <DeleteOutlinedIcon />
+          Delete
         </Button>
       </TitleContainer>
       <ActMembers>
