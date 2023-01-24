@@ -8,6 +8,7 @@ const Container = styled.div`
   flex: 2;
   height: calc(100vh - 56px);
   position: sticky;
+  top: 56px;
   background-color: #e3e2e2;
 `;
 
