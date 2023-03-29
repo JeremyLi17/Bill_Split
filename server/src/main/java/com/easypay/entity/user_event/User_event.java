@@ -6,13 +6,28 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 @Entity
 public class User_event {
+
+    @Id
+    @GeneratedValue(
+            strategy = SEQUENCE,
+            generator = "USER_EVENT_SEQUENCE"
+    )
+    @SequenceGenerator(
+            name = "USER_EVENT_SEQUENCE",
+            sequenceName = "USER_EVENT_SEQUENCE",
+            initialValue = 1,
+            allocationSize = 1)
+    @Column(name = "USER_EVENT_ID", nullable = false)
+    Long id;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "USER_ID", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
-
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "EVENT_ID", nullable = false)

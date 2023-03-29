@@ -1,6 +1,7 @@
 package com.easypay.entity.activity_payee;
 
 import com.easypay.entity.activity.Activity;
+import com.easypay.entity.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;

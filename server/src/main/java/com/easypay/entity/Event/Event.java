@@ -1,6 +1,6 @@
 package com.easypay.entity.Event;
 
-import com.easypay.entity.User;
+import com.easypay.entity.user.User;
 
 import javax.persistence.*;
 
@@ -20,7 +20,7 @@ public class Event {
     public String toString() {
         return "Event{" +
                 "id=" + id +
-                ", event_name='" + event_name + '\'' +
+                ", event_name='" + name + '\'' +
                 ", start_date=" + start_date +
                 ", end_date=" + end_date +
                 ", user=" + user +
@@ -29,7 +29,7 @@ public class Event {
 
     public Event(Long id, String event_name, Date start_date, Date end_date, List<User> user) {
         this.id = id;
-        this.event_name = event_name;
+        this.name = event_name;
         this.start_date = start_date;
         this.end_date = end_date;
         this.user = user;
@@ -48,7 +48,7 @@ public class Event {
     )
     Long id;
 
-    String event_name;
+    String name;
 
     public Long getId() {
         return id;
@@ -58,12 +58,12 @@ public class Event {
         this.id = id;
     }
 
-    public String getEvent_name() {
-        return event_name;
+    public String getName() {
+        return name;
     }
 
     public void setEvent_name(String event_name) {
-        this.event_name = event_name;
+        this.name = event_name;
     }
 
     public Date getStart_date() {
@@ -98,5 +98,4 @@ public class Event {
     @ManyToMany
     @Column(name = "Participants", nullable = false)
     List<User> user;
-
 }

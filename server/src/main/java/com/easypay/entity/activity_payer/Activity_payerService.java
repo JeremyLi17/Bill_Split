@@ -4,11 +4,14 @@ import com.easypay.entity.activity.Activity;
 import com.easypay.entity.activity.ActivityRepo;
 import com.easypay.entity.activity_payee.Activity_payee;
 import com.easypay.entity.activity_payee.Activity_payeeRepo;
+import com.easypay.entity.user.User;
+import com.easypay.entity.user.UserRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -25,10 +28,10 @@ public class Activity_payerService {
     }
     public Activity_payer addActivity_payer(Long activityId, Long payerId, float amount){
         Activity_payer activity_payer = new Activity_payer();
-        Activity activity = activityRepo.getById(activityId);
-        User payer = userRepo.getById(payerId);
-        activity_payer.setPayer(payer);
-        activity_payer.setActivity(activity);
+        Optional<Activity> activity = activityRepo.findById(activityId);
+        Optional<User> payer = userRepo.findById(payerId);
+        activity_payer.setPayer(payer.get());
+        activity_payer.setActivity(activity.get());
         activity_payer.setAmount(amount);
         activity_payerRepo.save(activity_payer);
         return activity_payer;

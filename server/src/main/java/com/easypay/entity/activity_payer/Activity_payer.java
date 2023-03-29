@@ -1,6 +1,7 @@
 package com.easypay.entity.activity_payer;
 
 import com.easypay.entity.activity.Activity;
+import com.easypay.entity.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -41,6 +42,8 @@ public class Activity_payer {
         this.activity = activity;
         this.payer = payer;
     }
+
+    public Activity_payer() {}
 
     public Long getId() {
         return id;

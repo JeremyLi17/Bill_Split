@@ -1,5 +1,6 @@
 package com.easypay.entity.activity;
 
+import com.easypay.entity.Event.Event;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;

@@ -19,7 +19,8 @@ public class Activity_payerController {
     @PostMapping("/add")
     public ResponseEntity<Activity_payer> addPayment(@RequestBody Activity_payer activity_payer)
     {
-        activity_payerService.addActivity_payer(activity_payer.getActivity().getId(), activity_payer.getPayee().getId(), activity_payer.getAmount());
+        activity_payerService.addActivity_payer(
+                activity_payer.getActivity().getId(), activity_payer.getPayer().getId(), activity_payer.getAmount());
         return new ResponseEntity<>(activity_payer, CREATED);
     }
     @GetMapping("/list/{payer_id}")

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.Optional;
 
-//
 @RestController
 @RequestMapping(path = "/api/events")
 public class EventControllerView {
@@ -29,7 +28,7 @@ public class EventControllerView {
     @PostMapping(path = "/")
     public ResponseEntity<Event> createEvent(@RequestBody Event event){
 
-        Event newEvent = eventServiceFunction.createEvent(event.getEvent_name(), event.getStart_date(), event.getEnd_date());
+        Event newEvent = eventServiceFunction.createEvent(event.getName(), event.getStart_date(), event.getEnd_date());
         return new ResponseEntity<>(newEvent, HttpStatus.CREATED);
     }
 

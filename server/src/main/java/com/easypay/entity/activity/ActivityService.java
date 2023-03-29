@@ -1,7 +1,8 @@
 package com.easypay.entity.activity;
 
+import com.easypay.entity.Event.Event;
+import com.easypay.entity.Event.EventRepoInterface;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +13,10 @@ import java.util.Optional;
 @Slf4j
 public class ActivityService {
     private final ActivityRepo activityRepo;
-    private final EventRepo eventRepo;
+    private final EventRepoInterface eventRepo;
 
     @Autowired
-    public ActivityService(ActivityRepo activityRepo, EventRepo eventRepo) {
+    public ActivityService(ActivityRepo activityRepo, EventRepoInterface eventRepo) {
         this.activityRepo = activityRepo;
         this.eventRepo = eventRepo;
     }
@@ -34,7 +35,7 @@ public class ActivityService {
         return activityRepo.findActivitiesByType(type);
 
     }
-    public List<Activity> findAllActivitiesByEventName(String eventName){activityRepo.
+    public List<Activity> findAllActivitiesByEventName(String eventName){
         return activityRepo.findAllActivitiesByEventName(eventName);
 
     }
@@ -42,9 +43,4 @@ public class ActivityService {
     public void deleteActivity(Long id) {
         activityRepo.deleteById(id);
     }
-
-
-
-
-
 }
