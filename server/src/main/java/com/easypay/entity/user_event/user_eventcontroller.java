@@ -1,13 +1,8 @@
 package com.easypay.entity.user_event;
-import com.easypay.entity.Event.Event;
-import com.easypay.entity.Event.EventServiceFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/user_event")
@@ -34,13 +29,13 @@ public class user_eventcontroller {
     @PostMapping(path = "/")
     public ResponseEntity<User_event> createUser_Event(@RequestBody User_event user_event){
 
-        User_event newUser_Event= User_eventServiceFunction.createUser_event(user_event.getUser().getId(), user_event.getEvent().getId());
+        User_event newUser_Event= user_eventServiceFunction.createUser_event(
+                user_event.getUser().getId(), user_event.getEvent().getId());
         return new ResponseEntity<>(newUser_Event, HttpStatus.CREATED);}
 
     @DeleteMapping(path = "/delete")
     public void deleteUser_Event(@RequestParam Long userid, @RequestParam Long eventid){
-            User_eventServiceFunction.deleteUser_Event(userid, eventid);
-
+            user_eventServiceFunction.deleteUser_Event(userid, eventid);
     }
 }
 

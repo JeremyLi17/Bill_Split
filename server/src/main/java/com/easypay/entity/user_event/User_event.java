@@ -1,15 +1,10 @@
-
 package com.easypay.entity.user_event;
 
 import com.easypay.entity.Event.Event;
-import com.easypay.entity.User;
+import com.easypay.entity.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
-
-import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
 public class User_event {

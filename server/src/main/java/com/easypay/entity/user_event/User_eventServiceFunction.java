@@ -24,8 +24,8 @@ public class User_eventServiceFunction {
 
     public User_event createUser_event(Long userid, Long eventid) {
         User_event userEvent = new User_event();
-        Event event= eventRepoInterface.getById(eventid);
-        userEvent.setEvent(event);
+        Optional<Event> event= eventRepoInterface.findById(eventid);
+        userEvent.setEvent(event.get());
         userEventRepoInterface.save(userEvent);
         return userEvent;
     }
@@ -35,5 +35,5 @@ public class User_eventServiceFunction {
     public Optional<User_event> getUser_eventByEventId(Long eventid){
         return userEventRepoInterface.findById(eventid);}
 
-    public static void deleteUser_Event(Long userid, Long eventid){eventRepoInterface.deleteById(id);};
+    public void deleteUser_Event(Long userid, Long eventid){eventRepoInterface.deleteById(eventid);};
 }
